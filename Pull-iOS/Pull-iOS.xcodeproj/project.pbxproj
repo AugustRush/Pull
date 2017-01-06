@@ -14,6 +14,19 @@
 		97F21AEF1E1F676D00672986 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 97F21AED1E1F676D00672986 /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		97F21B331E1F8AA900672986 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		97F21AE11E1F676D00672986 /* Pull-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Pull-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		97F21AE41E1F676D00672986 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -38,6 +51,7 @@
 		97F21AD81E1F676D00672986 = {
 			isa = PBXGroup;
 			children = (
+				97F21B351E1F922A00672986 /* Utils */,
 				97F21AE31E1F676D00672986 /* Pull-iOS */,
 				97F21AE21E1F676D00672986 /* Products */,
 			);
@@ -64,6 +78,13 @@
 			path = "Pull-iOS";
 			sourceTree = "<group>";
 		};
+		97F21B351E1F922A00672986 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -74,6 +95,7 @@
 				97F21ADD1E1F676D00672986 /* Sources */,
 				97F21ADE1E1F676D00672986 /* Frameworks */,
 				97F21ADF1E1F676D00672986 /* Resources */,
+				97F21B331E1F8AA900672986 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -96,6 +118,7 @@
 				TargetAttributes = {
 					97F21AE01E1F676D00672986 = {
 						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = Y2BAKEHXE4;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -259,8 +282,11 @@
 		97F21AF41E1F676D00672986 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = Y2BAKEHXE4;
 				INFOPLIST_FILE = "Pull-iOS/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "AR.Pull-iOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -271,8 +297,11 @@
 		97F21AF51E1F676D00672986 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = Y2BAKEHXE4;
 				INFOPLIST_FILE = "Pull-iOS/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "AR.Pull-iOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -299,6 +328,7 @@
 				97F21AF51E1F676D00672986 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
