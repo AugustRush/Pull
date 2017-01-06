@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "40B450A794379369637CBE3C8E5C899FE447CAF8",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "13C67F1127A92ECD042AD4547BA0D66BFE33C630" : 9223372036854775807,
+    "40B450A794379369637CBE3C8E5C899FE447CAF8" : 9223372036854775807
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "D4F3352B-4B22-41EE-A550-800E3CEB1D6B",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "13C67F1127A92ECD042AD4547BA0D66BFE33C630" : "PullServer\/",
+    "40B450A794379369637CBE3C8E5C899FE447CAF8" : "Pull\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "Pull",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "Pull.xcworkspace",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/AugustRush\/PullServer.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "13C67F1127A92ECD042AD4547BA0D66BFE33C630"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/AugustRush\/Pull.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "40B450A794379369637CBE3C8E5C899FE447CAF8"
+    }
+  ]
+}
