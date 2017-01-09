@@ -26,7 +26,7 @@ class ViewController: UIViewController {
     }
 
     func postTest()  {
-        let url = URL.init(string: "http:/172.18.13.142:8888/post/")
+        let url = URL.init(string: "http:/172.18.13.136:8888/getchannel/")
         var request = URLRequest.init(url: url!, cachePolicy: .reloadIgnoringLocalCacheData, timeoutInterval: 10)
         request.httpMethod = "POST"
         
