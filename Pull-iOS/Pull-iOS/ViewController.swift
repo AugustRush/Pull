@@ -7,12 +7,38 @@
 //
 
 import UIKit
+import Alamofire
 
-class ViewController: UIViewController {
+fileprivate let channelCellIdentifier = "channel_identifier"
 
+class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+
+    var channelList = Array<Channel>()
+    
+    @IBOutlet weak var tableView: UITableView!
+    
+    //MARK: Life cycle methods
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+
+        setUp()
+        
+        let params = ["name":"August Rush"]
+        Alamofire.request("http:/172.18.13.136:8888/getchannel/", method: .post, parameters: params, encoding: URLEncoding.default, headers: nil).responseJSON { (response) in
+            
+            if let data = response.result.value {
+                let list = data as! [String]
+                for name in list {
+                    let channel = Channel()
+                    channel.name = name
+                    self.channelList.append(channel)
+                }
+                //
+                self.tableView.reloadData()
+            }
+        }
+
     }
 
     override func didReceiveMemoryWarning() {
@@ -20,28 +46,35 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    //Just for test
-    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
-        postTest()
+    //MARK: Private methods
+    
+    func setUp() {
+        self.automaticallyAdjustsScrollViewInsets = false
+        self.tableView.register(UITableViewCell.self, forCellReuseIdentifier: channelCellIdentifier)
     }
-
-    func postTest()  {
-        let url = URL.init(string: "http:/172.18.13.136:8888/getchannel/")
-        var request = URLRequest.init(url: url!, cachePolicy: .reloadIgnoringLocalCacheData, timeoutInterval: 10)
-        request.httpMethod = "POST"
-        
-        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
-        request.addValue("application/json", forHTTPHeaderField: "Accept")
-        
-        let params = ["name":"August Rush"]
-        request.httpBody = try! JSONSerialization.data(withJSONObject: params, options: .prettyPrinted)
-        
-        let postTask = URLSession.shared.dataTask(with: request) { (data, response, error) in
-            let json = String.init(data: data!, encoding: .utf8)
-            print("data is \(json), error is \(error)")
+    
+    //MARK: UITableViewDataSource methods
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return self.channelList.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: channelCellIdentifier, for: indexPath)
+        if indexPath.row < self.channelList.count {
+            cell.textLabel?.text = channelList[indexPath.row].name
         }
-        postTask.resume()
+        return cell
     }
-
+    
+    //MARK: UITabbleViewDelegate methods
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        print("select indexPath is \(indexPath)")
+    }
 }
 
